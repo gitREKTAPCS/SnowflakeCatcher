@@ -40,6 +40,7 @@ if(keyPressed){
 
 void mouseDragged()
 {
+  noStroke();
   fill(catcherRed,catcherGreen,catcherBlue);
   ellipse(mouseX, mouseY, 30, 5);
 }
@@ -61,6 +62,7 @@ class Snowflake
 
   void show()
   {
+    stroke(0);
     fill(255);
     ellipse(x, y, 5, 5);
   }
