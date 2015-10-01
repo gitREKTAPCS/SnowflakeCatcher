@@ -1,4 +1,4 @@
-Snowflake[] snowSwag = new Snowflake[100];
+Snowflake[] snowSwag = new Snowflake[250];
 int catcherRed = (int)(Math.random()*250)+1;
 int catcherBlue = (int)(Math.random()*250)+1;
 int catcherGreen = (int)(Math.random()*250)+1;
@@ -7,7 +7,7 @@ int catcherGreen = (int)(Math.random()*250)+1;
 void setup()
 {
   //your code here
-  size(300, 300);
+  size(500, 500);
   background(0);
   for(int j=0; j<snowSwag.length; ++j){
   snowSwag[j] = new Snowflake();
@@ -42,7 +42,7 @@ void mouseDragged()
 {
   noStroke();
   fill(catcherRed,catcherGreen,catcherBlue);
-  ellipse(mouseX, mouseY, 30, 5);
+  ellipse(mouseX, mouseY, 50, 10);
 }
 
 
@@ -55,8 +55,8 @@ class Snowflake
 
   Snowflake()
   {
-    x = (int)(Math.random()*301);
-    y = (int)(Math.random()*301);
+    x = (int)(Math.random()*501);
+    y = (int)(Math.random()*501);
     isMoving = true;
   }
 
@@ -69,7 +69,7 @@ class Snowflake
 
   void lookDown()
   {
-    if(y<=290 && y>=0 && (get(x, y+5) != color(0))){
+    if(y<=490 && y>=0 && (get(x, y+5) != color(0))){
       isMoving=false;
     }else{
       isMoving=true;
@@ -91,9 +91,9 @@ class Snowflake
 
   void wrap()
   {
-    if(y>=299){
+    if(y>=499){
       y = 0;
-      x = (int)(Math.random()*301);
+      x = (int)(Math.random()*501);
     }
   }
 }
